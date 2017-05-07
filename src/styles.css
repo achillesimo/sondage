@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+.wrapper {
+	background: #3A424F;
+	color: #f4f4f4;
+	margin: 0 auto;
+	width: 100%;
+	min-height: 650px;
+}
+
+.formulaire{
+	background: #FFFFFF;
+	min-height: 650px;
+	color: #6E7790;
+}
+
+.flex {
+	display: flex;
+}
+
+.graph, .formulaire{
+	width: 50%;
+}
+
+.chart{
+    height: 100px;
+}
+.graph{
+  padding-top: 100px;
+}
+.sondage{
+  padding: 10px;
+}
+.sondage{
+  font-weight: normal;
+}
+.no-radius{
+  border-radius: 0px !important;
+}
