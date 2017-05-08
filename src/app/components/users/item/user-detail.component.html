@@ -5,7 +5,9 @@
     <fa [name]="'male'" *ngIf="user.civ === 1" [size]=2></fa>
     <fa [name]="'female'" *ngIf="user.civ === 2" [size]=2></fa>
   </div>
-  <div class="text-center col-xs-6">{{user.email | lowercase}}</div>
+  <div class="text-center col-xs-6">
+    <a [routerLink]="['/user', user.id]"> {{user.email | lowercase}} </a>
+  </div>
   <div class="text-center col-xs-3">
     <div [ngSwitch]="user.job">
       <p *ngSwitchCase="1">Informaticien</p>

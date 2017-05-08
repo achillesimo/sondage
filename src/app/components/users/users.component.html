@@ -1,14 +1,22 @@
-<div class="sondage">
 
-  <!-- Inpolation -->
-  <h2 class="text-center"> {{ title }} </h2>
-  <p></p>
+<div class="flex">
+  <div class="graph">
+    <app-doughnut></app-doughnut>
+  </div>
+  <div class="formulaire">
+    <div class="sondage">
 
-   <!-- @input -->
-   <app-user-detail *ngFor="let user of users"
-                    [user]="user"></app-user-detail>
-   <!-- @output
-   <app-user-detail *ngFor="let user of users"
-                    [user]="user" (updateStatus) = "updateUser($event)"></app-user-detail>
-     -->
+      <!-- Inpolation -->
+      <h2 class="text-center"> {{ title }} </h2>
+      <p></p>
+
+      <app-user-detail *ngFor="let user of users"
+                       [user]="user" (updateStatus) = "updateUser($event)"></app-user-detail>
+
+    </div>
+
+  </div>
+  <div class="graph">
+    <app-bar></app-bar>
+  </div>
 </div>

@@ -11,15 +11,15 @@ export class UserDetailComponent implements OnInit {
   @Input()
   user:User;
 
-  /*
+
   @Output()
   updateStatus: EventEmitter<User> = new  EventEmitter();
-  */
+
 
   constructor() { }
   ngOnInit() {}
 
   public toggleUser(user): void {
-   //this.updateStatus.emit(user)
+   this.updateStatus.emit(user)
   }
 }

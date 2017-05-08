@@ -1,0 +1,17 @@
+<div class="user">
+  <div class="row h3">
+     <div class="col-xs-5">Email : </div>
+     <div class="col-xs-7">{{user.email}}</div>
+  </div>
+  <div class="row h3">
+     <div class="col-xs-5">Job : </div>
+     <div class="col-xs-7">
+       <div [ngSwitch]="user.job">
+         <p *ngSwitchCase="1">Informaticien</p>
+         <p *ngSwitchCase="2">Commercial</p>
+         <p *ngSwitchCase="3">ARH</p>
+         <p *ngSwitchDefault>Autre</p>
+       </div>
+     </div>
+  </div>
+</div>

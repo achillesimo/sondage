@@ -35,3 +35,7 @@
 .no-radius{
   border-radius: 0px !important;
 }
+.active {
+  color: #555;
+  background-color: #e7e7e7;
+}
