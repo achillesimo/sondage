@@ -10,6 +10,7 @@ import {ChartsModule} from "ng2-charts";
 import { BarComponent } from './components/bar/bar.component';
 import { SondageComponent } from './components/sondage/sondage.component';
 import { UsersComponent } from './components/users/users.component';
+import { UserDetailComponent } from './components/users/item/user-detail.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { UsersComponent } from './components/users/users.component';
     DoughnutComponent,
     BarComponent,
     SondageComponent,
-    UsersComponent
+    UsersComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,

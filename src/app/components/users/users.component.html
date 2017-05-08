@@ -2,33 +2,13 @@
 
   <!-- Inpolation -->
   <h2 class="text-center"> {{ title }} </h2>
- <table class="table table-striped text-center">
-   <tr *ngFor="let user of users" >
-     <td class="text-center">
-        <!-- *ngIf cas 1 -->
-        <fa [name]="'male'" *ngIf="user.civ === 1" [size]=2></fa>
-        <fa [name]="'female'" *ngIf="user.civ === 2" [size]=2></fa>
+  <p></p>
 
-        <!-- *ngIf cas 2
-          <fa [name]="'male'" [size]=2 *ngIf="user.civ === 1; else female"></fa>
-          <ng-template #female><fa [name]="'female'" [size]=2></fa></ng-template>
-        -->
-        <!-- *ngIf cas 3
-          <p *ngIf="user.civ === 1; then male else female"></p>
-          <ng-template #male><fa [name]="'male'" [size]=2></fa></ng-template>
-          <ng-template #female><fa [name]="'female'" [size]=2></fa></ng-template>
-        -->
-     </td>
-     <td class="text-center">{{user.email | lowercase}}</td>
-     <td class="text-center">
-       <div [ngSwitch]="user.job">
-         <p *ngSwitchCase="1">Informaticien</p>
-         <p *ngSwitchCase="2">Commercial</p>
-         <p *ngSwitchCase="3">ARH</p>
-         <p *ngSwitchDefault>Autre</p>
-       </div>
-     </td>
-   </tr>
- </table>
-
+   <!-- @input -->
+   <app-user-detail *ngFor="let user of users"
+                    [user]="user"></app-user-detail>
+   <!-- @output
+   <app-user-detail *ngFor="let user of users"
+                    [user]="user" (updateStatus) = "updateUser($event)"></app-user-detail>
+     -->
 </div>

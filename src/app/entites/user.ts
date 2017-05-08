@@ -3,4 +3,5 @@ export interface User {
   civ: number;
   email: string;
   job: number;
+  active: boolean;
 }

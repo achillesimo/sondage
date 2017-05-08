@@ -1,0 +1,11 @@
+.line div {
+  padding: 2px 0;
+
+}
+.line {
+  border-bottom: 1px solid #ddd;
+  padding: 0 2px;
+}
+.toggle{
+  cursor: pointer;
+}
