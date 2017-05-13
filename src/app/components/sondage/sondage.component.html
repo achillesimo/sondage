@@ -1,13 +1,52 @@
-<div class="sondage">
-
-  <!-- Inpolation -->
-  <h2 class="text-center"> {{ title }} </h2>
-  <div class="sondage">
-    <div class="form-group">
-      <label for="email">Email </label>
-      <input type="email" class="form-control no-radius" id="email" placeholder="Votre email" [(ngModel)]="email">
-    </div>
-    <p>{{email}}</p>
+<div class="flex">
+  <div class="graph">
+    <app-doughnut></app-doughnut>
   </div>
+  <div class="formulaire">
+    <div class="sondage">
 
+      <!-- Inpolation -->
+      <h2 class="text-center"> {{ title }} </h2>
+      <form novalidate [formGroup]="vote">
+        <div class="sondage">
+          <div formGroupName="user">
+            <div class="form-group">
+              <label for="email">Email </label>
+              <input type="email" formControlName="email" class="form-control no-radius" id="email" placeholder="Votre email">
+            </div>
+            <div class="form-group">
+              <label for="email">Job</label>
+              <input type="text" formControlName="job"  class="form-control no-radius" id="job" placeholder="Votre job">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="radio-inline">
+              <input type="radio" formControlName="satisfaction" id="s1" value="0"> 0%
+            </label>
+            <label class="radio-inline">
+              <input type="radio" formControlName="satisfaction" id="s2" value="25"> 25%
+            </label>
+            <label class="radio-inline">
+              <input type="radio" formControlName="satisfaction" id="s3" value="50"> 50%
+            </label>
+            <label class="radio-inline">
+              <input type="radio" formControlName="satisfaction" id="s5" value="75"> 75%
+            </label>
+            <label class="radio-inline">
+              <input type="radio" formControlName="satisfaction" id="s4" value="100"> 100%
+            </label>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 text-center">
+              <button type="button" class="btn btn-primary no-radius">Enregistrer</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+  <div class="graph">
+    <app-bar></app-bar>
+  </div>
 </div>
