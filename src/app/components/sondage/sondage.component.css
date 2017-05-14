@@ -1,0 +1,9 @@
+.has-error .block-label{
+  font-weight: normal;
+  overflow: hidden;
+  display: block;
+}
+
+.has-error label span{
+  float: right;
+}

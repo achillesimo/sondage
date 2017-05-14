@@ -1,5 +1,15 @@
-import {FormBuilder, FormGroup, FormControl} from "@angular/forms";
+import {
+  FormBuilder, FormGroup, FormControl, Validators, AbstractControl, ValidatorFn,
+  ValidationErrors
+} from "@angular/forms";
 import {Injectable} from "@angular/core";
+import {Observable} from "rxjs";
+
+
+function softeamEmailValidator(control: AbstractControl): ValidationErrors {
+  return control.value.indexOf('@softeam.fr') > -1 ? Observable.of(null) : Observable.of({'invalidFormat': true});
+}
+
 
 @Injectable()
 export class VoteForm {
@@ -21,14 +31,16 @@ export class VoteForm {
 
   public buildForm(): FormGroup {
      return this.fb.group({
-       satisfaction: [''],
+       satisfaction: ['', Validators.required],
+       commentaire: [''],
        user: this.fb.group({
          id: [''],
          civ: [''],
-         email: [''],
-         job: [''],
+         email: ['', Validators.required, softeamEmailValidator],
+         job: ['', Validators.required],
          active: ['']
        })
     })
   }
+
 }

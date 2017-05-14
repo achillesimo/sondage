@@ -7,38 +7,62 @@
 
       <!-- Inpolation -->
       <h2 class="text-center"> {{ title }} </h2>
-      <form novalidate [formGroup]="vote">
+      <form novalidate [formGroup]="vote" (ngSubmit)="saveVote(vote)">
         <div class="sondage">
           <div formGroupName="user">
-            <div class="form-group">
-              <label for="email">Email </label>
+            <div class="form-group" [ngClass]="{ 'has-error':  (vote.get('user.email').hasError('required') || vote.get('user.email').hasError('invalidFormat')) && vote.get('user.email').touched }">
+              <label for="email" class="control-label block-label">
+                Email
+                <span *ngIf="vote.get('user.email').hasError('required') && vote.get('user.email').touched"> Ce champ est requis*</span>
+                <span *ngIf="vote.get('user.email').hasError('invalidFormat') && vote.get('user.email').touched"> l' email doit être au format xxx.yyy@softeam.fr*</span>
+              </label>
               <input type="email" formControlName="email" class="form-control no-radius" id="email" placeholder="Votre email">
             </div>
-            <div class="form-group">
-              <label for="email">Job</label>
-              <input type="text" formControlName="job"  class="form-control no-radius" id="job" placeholder="Votre job">
+            <div class="form-group" [ngClass]="{ 'has-error':  vote.get('user.job').hasError('required') && vote.get('user.job').touched }">
+              <label for="email" class="control-label block-label">
+                  Job
+                 <span *ngIf="vote.get('user.job').hasError('required') && vote.get('user.job').touched"> Ce champ est requis*</span>
+              </label>
+              <select formControlName="job"  class="form-control no-radius" id="job">
+
+                <option value="">Sélectionnez votre job</option>
+                <option value="Informaticien">Informaticien</option>
+                <option value="Commercial">Commercial</option>
+                <option value="ARH">ARH</option>
+                <option value="Autre">Autre</option>
+              </select>
             </div>
           </div>
+          <p>Votre taux de Satisfaction</p>
           <div class="form-group">
             <label class="radio-inline">
-              <input type="radio" formControlName="satisfaction" id="s1" value="0"> 0%
+              <input type="radio" [checked]="vote.get('satisfaction').value === 0 ? true : false" formControlName="satisfaction" id="s1" value="0"> 0%
             </label>
             <label class="radio-inline">
-              <input type="radio" formControlName="satisfaction" id="s2" value="25"> 25%
+              <input type="radio" [checked]="vote.get('satisfaction').value === 25 ? true : false"  formControlName="satisfaction" id="s2" value="25"> 25%
             </label>
             <label class="radio-inline">
-              <input type="radio" formControlName="satisfaction" id="s3" value="50"> 50%
+              <input type="radio" [checked]="vote.get('satisfaction').value === 50 ? true : false"  formControlName="satisfaction" id="s3" value="50"> 50%
             </label>
             <label class="radio-inline">
-              <input type="radio" formControlName="satisfaction" id="s5" value="75"> 75%
+              <input type="radio" [checked]="vote.get('satisfaction').value === 75 ? true : false"  formControlName="satisfaction" id="s5" value="75"> 75%
             </label>
             <label class="radio-inline">
-              <input type="radio" formControlName="satisfaction" id="s4" value="100"> 100%
+              <input type="radio" [checked]="vote.get('satisfaction').value === 100 ? true : false"  formControlName="satisfaction" id="s4" value="100"> 100%
             </label>
           </div>
+          <div class="form-group">
+            <label for="commentaire" class="control-label block-label">
+              Un commentaire ?
+            </label>
+            <textarea formControlName="commentaire" class="form-control no-radius" id="commentaire" cols="30" rows="3"></textarea>
+          </div>
+
+          <p>{{vote.value | json}}</p>
+          <p>{{vote.get('user.email').errors | json}}</p>
           <div class="row">
             <div class="col-xs-12 text-center">
-              <button type="button" class="btn btn-primary no-radius">Enregistrer</button>
+              <button type="submit" class="btn btn-primary no-radius" [disabled]="vote.invalid">Enregistrer</button>
             </div>
           </div>
         </div>
