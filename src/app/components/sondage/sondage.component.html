@@ -26,10 +26,10 @@
               <select formControlName="job"  class="form-control no-radius" id="job">
 
                 <option value="">Sélectionnez votre job</option>
-                <option value="Informaticien">Informaticien</option>
-                <option value="Commercial">Commercial</option>
-                <option value="ARH">ARH</option>
-                <option value="Autre">Autre</option>
+                <option value="1">Informaticien</option>
+                <option value="2">Commercial</option>
+                <option value="3">ARH</option>
+                <option value="4">Autre</option>
               </select>
             </div>
           </div>
@@ -58,8 +58,8 @@
             <textarea formControlName="commentaire" class="form-control no-radius" id="commentaire" cols="30" rows="3"></textarea>
           </div>
 
-          <p>{{vote.value | json}}</p>
-          <p>{{vote.get('user.email').errors | json}}</p>
+          <!--<p>{{vote.value | json}}</p>-->
+          <!--<p>{{vote.get('user.email').errors | json}}</p>-->
           <div class="row">
             <div class="col-xs-12 text-center">
               <button type="submit" class="btn btn-primary no-radius" [disabled]="vote.invalid">Enregistrer</button>

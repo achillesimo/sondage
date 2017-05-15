@@ -16,4 +16,23 @@ export class UserService {
                 .map(response => response.json());
   }
 
+  public updateUser(user: User): Observable<User>{
+    return this.http
+      .put(this.baseUrl +'/users/' + user.id, user)
+      .map(response =>response.json());
+  }
+
+  public saveUser(user: User): Observable<User>{
+    return this.http
+      .post(this.baseUrl +'/users', user)
+      .map(response =>response.json());
+  }
+
+  public getUser(id: string){
+    return this.http
+      .get(this.baseUrl + '/users/' + id)
+      .map(response =>response.json());
+  }
+
+
 }

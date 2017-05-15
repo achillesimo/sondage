@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
+  title: string = "Bonjour";
+  sTitle: string = "Merci de participer au sondage";
   constructor() { }
 
   ngOnInit() {

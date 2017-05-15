@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from "../../entites/user";
-import * as _ from 'underscore';
-import {Users} from "../../datas/users";
 import {UsersService} from "../../services/users.service";
 import {UserService} from "../../services/user.service";
 
@@ -28,15 +26,13 @@ export class UsersComponent implements OnInit {
      );
   }
 
-  public updateUser(user): void {
-
-    _.map(
-        _.filter(this.users, function (u) {
-            return u.id === user.id;
-        }),
-        function (ur) {
-          return ur.active = !ur.active;
-        }
+  public updateUser(user: User): void {
+    user.active = !user.active
+    this.userService.updateUser(user).subscribe(
+      res => {},
+      error => {
+        console.log(error)
+      }
     );
 
   }
