@@ -57,9 +57,10 @@
             </label>
             <textarea formControlName="commentaire" class="form-control no-radius" id="commentaire" cols="30" rows="3"></textarea>
           </div>
-
-          <!--<p>{{vote.value | json}}</p>-->
-          <!--<p>{{vote.get('user.email').errors | json}}</p>-->
+          <div style="display: none"> <!--border [borderColor]="'#f000ff'"-->
+            <p>{{vote.value | json}}</p>
+            <p>{{vote.get('user.email').errors >on}}</p>
+          </div>
           <div class="row">
             <div class="col-xs-12 text-center">
               <button type="submit" class="btn btn-primary no-radius" [disabled]="vote.invalid">Enregistrer</button>

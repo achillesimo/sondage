@@ -56,8 +56,8 @@ export class BarComponent implements OnInit {
     this.vs.getVotes().subscribe(votes => {
       let satisfactions: number [] = [0, 0, 0, 0];
       satisfactions[0] = _.size(_.filter(votes, function(vote){ return +vote.satisfaction === 0; }));
-      satisfactions[1] =  _.size(_.filter(votes, function(vote){ return +vote.satisfaction === 25; }));
-      satisfactions[2] =  _.size(_.filter(votes, function(vote){ return +vote.satisfaction === 50; }));
+      satisfactions[1] = _.size(_.filter(votes, function(vote){ return +vote.satisfaction === 25; }));
+      satisfactions[2] = _.size(_.filter(votes, function(vote){ return +vote.satisfaction === 50; }));
       satisfactions[3] = _.size(_.filter(votes, function(vote){ return +vote.satisfaction === 75; }));
       satisfactions[4] = _.size(_.filter(votes, function(vote){ return +vote.satisfaction === 100; }));
 
