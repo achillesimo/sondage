@@ -15,6 +15,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import {sondagesRouting} from "./app.routes";
 import { UserComponent } from './components/users/sheet/user.component';
 import { BoderDirective } from './directives/boder.directive';
+import { ChoicesComponent } from './components/commons/choices/choices.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { BoderDirective } from './directives/boder.directive';
     UserDetailComponent,
     DashboardComponent,
     UserComponent,
-    BoderDirective
+    BoderDirective,
+    ChoicesComponent
   ],
   imports: [
     BrowserModule,

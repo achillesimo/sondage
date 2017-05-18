@@ -34,7 +34,8 @@
             </div>
           </div>
           <p>Votre taux de Satisfaction</p>
-          <div class="form-group">
+          <choices formControlName="satisfaction"></choices>
+          <!--div class="form-group">
             <label class="radio-inline">
               <input type="radio" [checked]="vote.get('satisfaction').value === 0 ? true : false" formControlName="satisfaction" id="s1" value="0"> 0%
             </label>
@@ -50,7 +51,7 @@
             <label class="radio-inline">
               <input type="radio" [checked]="vote.get('satisfaction').value === 100 ? true : false"  formControlName="satisfaction" id="s4" value="100"> 100%
             </label>
-          </div>
+          </div-->
           <div class="form-group">
             <label for="commentaire" class="control-label block-label">
               Un commentaire ?
@@ -66,6 +67,9 @@
               <button type="submit" class="btn btn-primary no-radius" [disabled]="vote.invalid">Enregistrer</button>
             </div>
           </div>
+          <!--div border borderColor="red">
+            {{vote.value | json}}
+          </div -->
         </div>
       </form>
     </div>
