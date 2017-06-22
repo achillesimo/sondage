@@ -97,6 +97,13 @@
       "email": "wycagywec@softeam.fr",
       "job": "1",
       "active": true
+    },
+    {
+      "id": 15,
+      "civ": 2,
+      "email": "frodo@softeam.fr",
+      "job": "4",
+      "active": true
     }
   ],
   "votes": [
@@ -267,6 +274,18 @@
         "active": true
       },
       "id": 14
+    },
+    {
+      "satisfaction": 50,
+      "commentaire": "Ex est et doloremque aute ipsum aut voluptas sed",
+      "user": {
+        "id": "",
+        "civ": 2,
+        "email": "frodo@softeam.fr",
+        "job": "4",
+        "active": true
+      },
+      "id": 15
     }
   ]
 }
