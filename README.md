@@ -2,7 +2,7 @@
 
 Demo pour un sondage Angular 4
 
-## Code scaffolding
+## Prérequis
 
 Installer [JSON-SERVER](https://github.com/typicode/json-server).
 
